@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Teko:wght@500;600;700&display=swap');
+
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-family: "Rajdhani", sans-serif;
+}
+
+.header {
+    margin: 5px 0;
+   
+    display: flex;
+   
+    border-bottom: 1px solid #24272d;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 110px;
+}
+
+.menu  {
+    display: flex;
+    gap: 32px;
+    margin-left: 60px;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+}
+
+.menu, .menu a:hover,
+.menu .active {
+    color: red;
+}
+
+.driver {
+    position: relative;
+
+    box-sizing: border-box;
+    
+    border: 1px solid red;
+    width: 1050px;
+    height: 400px;
+    padding: 24px 24px 24px 360px;
+    margin-top: 20px;
+    margin-left:20px;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+    
+}
+
+.team {
+    position: absolute;
+    font-family: "Rajdhani", sans-serif;
+
+    color: #afb4be;
+    letter-spacing: 4px;
+}
+
+.driver h1 {
+     margin: 0;
+    line-height: .9;
+}
+
+.driver-name {
+   
+    font-size: 40px;
+}
+
+.driver-photo {
+    position: absolute;
+    
+    width: 380px;
+    top: 0;
+    left: 0;
+    
+}
+
+.driver-surname  {
+    font-family: "Rajdhani", sans-serif;
+
+    font-size: 70px;
+    
+    color: #ff1e2d;
+
+}
+
+.driver > :not(.driver-photo) {
+    position: relative;
+}
+
+.driver-info{
+    display: flex;
+    flex-direction: row;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    align-items: center;
+    gap: 8px;
+}
+
+.pipe {
+    color: #555555;
+    font-size: 25px;
+}
+
+
+.driver-info img {
+    width: 40px;
+   
+}
+
+.driver-phrase {
+    font-size: 13px;
+    color: #9CA0A8;
+}
+
+/*IMPORTANTE!!! LINHA 129 ATÉ 172 FOI FEITO COM IA PARA FINS EDUCATIVOS!!!!!!*/
+
+/* Distribui os quatro cards em colunas com a mesma largura. */
+.driver-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    max-width: 360px;
+    margin: 24px 0 0;
+}
+
+.driver-stat {
+    box-sizing: border-box;
+    padding: 12px 8px 10px;
+    border: 1px solid #24272d;
+    border-radius: 6px;
+    background: linear-gradient(145deg, #0c1218, #040608);
+    text-align: center;
+}
+
+.driver-stat dt {
+    color: #afb4be;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* Empilha o ícone e o número no centro de cada card. */
+.driver-stat dd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin: 8px 0 0;
+    color: #f5f6f8;
+    font-family: "Teko", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.stat-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.driver > .team-info {
+    
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 200px;
+    z-index: 1;
+    
+}
+
+.team-logo {
+    height: auto;
+    width: 100%;
+
+    border-bottom: 1px solid red;
+    padding-bottom: 12px;
+    
+}
+
+.team-name {
+    font-size: 13px;
+}
