@@ -246,9 +246,16 @@ body {
 }
 
 .next-race-header {
+   
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
     
+    
+}
+
+.race-img img {
+    position: absolute;
+    width: 400px;
     
 }
