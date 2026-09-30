@@ -381,3 +381,53 @@ body {
     outline: 2px solid white;
     outline-offset: 5px;
 }
+
+.performance {
+    box-sizing: border-box;
+    
+   margin: 20px;
+    
+    width: 1050px;
+    min-height: 200px;
+    padding: 20px;
+
+    border: 1px solid red;
+    border-radius: 10px;
+}
+
+.performance h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.chart-container {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    height: 200px;
+    
+}
+
+.performance-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.points-efficiency {
+    width: 140px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.points-efficiency strong {
+    font-size: 28px;
+}
+
+.points-efficiency p {
+    font-size: 14px;
+    margin: 12px 0;
+    color: #afb4be
+}

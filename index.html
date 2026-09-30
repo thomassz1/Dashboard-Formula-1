@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard Fórmula 1</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-
+   </head>
   <body>
+    
     <header class="header">
       <img
         class="logo"
@@ -200,5 +200,22 @@
         </div>
       </div>
     </div>
+
+    <section class="performance">
+      <h2>DESEMPENHO NA TEMPORADA</h2>
+     <div class="performance-content">
+        <div class="chart-container">
+          <canvas id="performance-chart"></canvas>
+        </div>
+        <div class="points-efficiency">
+          <strong>87%</strong>
+          <p>APROVEITAMENTO DE PONTOS</p>
+        </div>
+      </div>
+   
+    </section>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script src="script.js"></script>
+
   </body>
 </html>
