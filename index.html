@@ -9,13 +9,22 @@
   <body>
     
     <header class="header">
+      <button class="menu-toggle"
+      type="button"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="main-menu"
+      >
+      <span aria-hidden="true">☰</span>
+      </button>
+
       <img
         class="logo"
         src="assets/f1-logo-vermelha.png"
         alt="Logo Fórmula 1"
       />
 
-      <nav class="menu">
+      <nav class="menu" id="main-menu" aria-label="Navegação principal">
         <a href="#" class="active">INÍCIO</a>
         <a href="#">PILOTOS</a>
         <a href="#">EQUIPES</a>

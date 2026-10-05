@@ -14,16 +14,29 @@ body {
 }
 
 .header {
-    margin: 5px 0;
-   
     display: flex;
-   
+
+    align-items: center;
+    min-height: 64px;
+    padding: 8px 20px;
     border-bottom: 1px solid #24272d;
-    padding: 0 20px;
+   
+}
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
 }
 
 .logo {
-    width: 110px;
+    width: 150px;
 }
 
 .menu  {
@@ -36,7 +49,7 @@ body {
 .menu a {
     text-decoration: none;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 20px;
     color: white;
 }
 
@@ -548,6 +561,43 @@ body {
         min-width: 0;
         gap: 12px 8px;
     }
+
+    .header {
+        display: grid;
+        grid-template-columns: 44px minmax(0, 1fr) 44px;
+        
+        gap: 8px;
+        padding: 8px 12px;
+    }
+
+    .menu-toggle {
+        display: grid;
+        place-items: center;
+    }
+
+    .header .logo {
+        justify-self: center;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .menu {
+        display: none;
+        grid-column: 1 / -1;
+        margin-left: 0;
+        padding: 12px 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+    }
+
+    .menu.is-open {
+        display: flex;
+    }
+
+    .menu a {
+        padding: 12px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -570,7 +620,7 @@ body {
         gap: 16px;
     }
 
-    .points-efficiency p{
+    .points-efficiency p {
         max-width: 160px;
         margin: 0;
         text-align: left;
