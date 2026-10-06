@@ -64,12 +64,11 @@ body {
     
     grid-template-areas: 
     "driver race"
-    "performance standings";
+    "performance standings"
+    "recent-races quote";
 
     max-width: 1700px;
     margin: 20px auto;
-    
-
     gap: 20px;
     align-items: start;
 }
@@ -589,6 +588,118 @@ body {
     letter-spacing: 0.5px;
 }
 
+.recent-races {
+    grid-area: recent-races;
+    padding: 20px;
+    border: 1px solid red;
+    border-radius: 10px;
+}
+
+.recent-races-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.recent-races-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.recent-races-header a {
+    color: #ff1e2d;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.recent-races-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.race-card {
+    min-width: 0;
+    overflow: hidden;
+
+    border: 1px solid #24272d;
+    border-radius: 8px;
+    background-color: #080808;
+}
+
+.race-card > img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.race-card-content {
+    padding: 14px 12px 12px;
+}
+
+.race-round {
+    margin-bottom: 8px;
+
+    color: #afb4be;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.race-card-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.race-card-title img {
+    width: 24px;
+    height: 16px;
+    object-fit: cover;
+}
+
+.race-card-title h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.race-card-content > p {
+    margin: 6px 0 12px;
+    color: #afb4be;
+    font-size: 13px;
+}
+
+.race-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.race-card-footer strong {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    min-width: 36px;
+    height: 28px;
+
+    padding: 0 8px;
+
+    border: 1px solid #ff1e2d;
+    border-radius: 4px;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.quote {
+    grid-area: quote;
+}
+
+
 @media (max-width: 1400px) {
       .dashboard{
         grid-template-columns: minmax(0,1fr);
@@ -597,10 +708,15 @@ body {
          "driver"
          "race"
          "performance"
-         "standings";
+         "standings"
+         "recent-races";
 
          margin: 12px;
          gap: 16px;
+    }
+
+    .quote {
+        display: none;
     }
 }
 
@@ -692,6 +808,12 @@ body {
     .menu a {
         padding: 12px;
     }
+
+    .recent-races-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -734,6 +856,18 @@ body {
     .efficiency-ring {
         flex-shrink: 0;
         margin: 0;
+    }
+
+    .recent-races-list {
+        grid-template-columns: 1fr;
+    }
+
+    .recent-races {
+        padding: 12px;
+    }
+
+    .race-card > img {
+        height: 140px;
     }
 
     
