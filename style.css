@@ -696,9 +696,50 @@ body {
 }
 
 .quote {
+    display: flex;
+    
     grid-area: quote;
+    min-height: 280px;
+    padding: 24px;
+
+    align-items: flex-end;
+
+    border: 1px solid red;
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.85)
+        ),
+        url("assets/imagens/quote-bg.png") 70% 20% / cover no-repeat;
+    
+    overflow: hidden;
+
 }
 
+.quote-content {
+    max-width: 320px;
+}
+
+.quote-mark {
+    width: 28px;
+    height: auto;
+    margin-bottom: 6px;
+}
+
+.quote-content p {
+    margin: 8px 0 16px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.quote-content strong {
+    color: #afb4be;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
 
 @media (max-width: 1400px) {
       .dashboard{

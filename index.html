@@ -5,24 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard Fórmula 1</title>
     <link rel="stylesheet" href="style.css" />
-   </head>
+  </head>
+
   <body>
-    
     <header class="header">
-      <button class="menu-toggle"
-      type="button"
-      aria-label="Abrir menu"
-      aria-expanded="false"
-      aria-controls="main-menu"
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="main-menu"
       >
-      <span aria-hidden="true">☰</span>
+        <span aria-hidden="true">☰</span>
       </button>
 
-      <img
-        class="logo"
-        src="assets/imagens/f1-logo-vermelha.png"
-        alt="Logo Fórmula 1"
-      />
+      <img class="logo" src="assets/imagens/f1-logo-vermelha.png" alt="Logo Fórmula 1" />
 
       <nav class="menu" id="main-menu" aria-label="Navegação principal">
         <a href="#" class="active">INÍCIO</a>
@@ -37,14 +34,15 @@
     </header>
 
     <div class="dashboard">
-        <main class="driver">
-          <div class="driver-portrait">
-            <img
-              class="driver-photo"
-              src="assets/imagens/Verstappen.png"
-              alt="Foto de Max Verstappen"
-            />
-          </div>
+      <main class="driver">
+        <div class="driver-portrait">
+          <img
+            class="driver-photo"
+            src="assets/imagens/Verstappen.png"
+            alt="Foto de Max Verstappen"
+          />
+        </div>
+
         <div class="driver-summary">
           <div class="team">
             <p>RED BULL RACING</p>
@@ -66,315 +64,305 @@
               dentro e fora da pista"
             </em>
           </div>
-
         </div>
 
-          <dl
-            class="driver-stats"
-            aria-label="Estatísticas de Max Verstappen"
-          >
-            <div class="driver-stat">
-              <dt>VITÓRIAS</dt>
+        <dl class="driver-stats" aria-label="Estatísticas de Max Verstappen">
+          <div class="driver-stat">
+            <dt>VITÓRIAS</dt>
 
-              <dd>
-                <img
-                  class="stat-icon"
-                  src="assets/icons/trophy.svg"
-                  alt=""
-                  width="24"
-                  height="24"
-                />
-                <span>61</span>
-              </dd>
-            </div>
-
-            <div class="driver-stat">
-              <dt>PÓDIOS</dt>
-
-              <dd>
-                <img
-                  class="stat-icon"
-                  src="assets/icons/podium.svg"
-                  alt=""
-                  width="24"
-                  height="24"
-                />
-                <span>110</span>
-              </dd>
-            </div>
-
-            <div class="driver-stat">
-              <dt>POLES</dt>
-
-              <dd>
-                <img
-                  class="stat-icon"
-                  src="assets/icons/stopwatch.svg"
-                  alt=""
-                  width="24"
-                  height="24"
-                />
-                <span>40</span>
-              </dd>
-            </div>
-
-            <div class="driver-stat">
-              <dt>PONTOS</dt>
-
-              <dd>
-                <img
-                  class="stat-icon"
-                  src="assets/icons/star.svg"
-                  alt=""
-                  width="24"
-                  height="24"
-                />
-                <span>2.654</span>
-              </dd>
-            </div>
-          </dl>
-
-          <div class="team-info">
-            <img
-              class="team-logo"
-              src="assets/logo-rbatt.png"
-              alt="Logo da Red Bull Racing"
-            />
-
-            <div class="team-name">
-              <p>Equipe</p>
-              <span>Red Bull Racing</span>
-
-              <p>Nacionalidade</p>
-              <span>Países Baixos</span>
-
-              <p>Data de nascimento</p>
-              <span>30/09/1997</span>
-
-              <p>Primeira corrida</p>
-              <span>2015 (Austrália)</span>
-
-              <p>Títulos</p>
-              <span>4 (2021, 2022, 2023, 2024)</span>
-            </div>
-          </div>
-        </main>        
-
-        <div class="next-race">
-          <div class="next-race-header">
-            <h1>PRÓXIMA CORRIDA</h1>
-            <a href="">VER CALENDARIO -&gt;</a>
+            <dd>
+              <img class="stat-icon" src="assets/icons/trophy.svg" alt="" width="24" height="24" />
+              <span>61</span>
+            </dd>
           </div>
 
-          <div class="race-img">
-            <img
-              src="assets/imagens/gp-australia.png"
-              alt="Circuito de Albert Park, na Austrália"
-            />
+          <div class="driver-stat">
+            <dt>PÓDIOS</dt>
 
-            <div class="race-date">
-              <span class="race-day">23</span>
-              <span class="race-month">MAR</span>
-            </div>
-            <div class="race-info">
-              <h2>GP DA AUSTRÁLIA</h2>
-              <p>Albert Park Circuit • Melbourne</p>
-            </div>
+            <dd>
+              <img class="stat-icon" src="assets/icons/podium.svg" alt="" width="24" height="24" />
+              <span>110</span>
+            </dd>
           </div>
-          <div class="race-countdown">
-            <p class="countdown-title">FALTAM</p>
 
-            <div class="countdown-grid">
-              <div class="countdown-item">
-                <span class="countdown-number">12</span>
-                <span class="countdown-unit">DIAS</span>
-              </div>
+          <div class="driver-stat">
+            <dt>POLES</dt>
 
-              <div class="countdown-item">
-                <span class="countdown-number">04</span>
-                <span class="countdown-unit">HORAS</span>
-              </div>
+            <dd>
+              <img
+                class="stat-icon"
+                src="assets/icons/stopwatch.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+              <span>40</span>
+            </dd>
+          </div>
 
-              <div class="countdown-item">
-                <span class="countdown-number">32</span>
-                <span class="countdown-unit">MIN</span>
-              </div>
+          <div class="driver-stat">
+            <dt>PONTOS</dt>
 
-              <div class="countdown-item">
-                <span class="countdown-number">18</span>
-                <span class="countdown-unit">SEG</span>
-              </div>
-            </div>
+            <dd>
+              <img class="stat-icon" src="assets/icons/star.svg" alt="" width="24" height="24" />
+              <span>2.654</span>
+            </dd>
+          </div>
+        </dl>
 
-            <button class="race-details-button" type="button">
-              <a href="">VER DETALHES</a>
-            </button>
+        <div class="team-info">
+          <img class="team-logo" src="assets/logo-rbatt.png" alt="Logo da Red Bull Racing" />
 
+          <div class="team-name">
+            <p>Equipe</p>
+            <span>Red Bull Racing</span>
+
+            <p>Nacionalidade</p>
+            <span>Países Baixos</span>
+
+            <p>Data de nascimento</p>
+            <span>30/09/1997</span>
+
+            <p>Primeira corrida</p>
+            <span>2015 (Austrália)</span>
+
+            <p>Títulos</p>
+            <span>4 (2021, 2022, 2023, 2024)</span>
           </div>
         </div>
-        
-        <section class="performance">
-          <h2>DESEMPENHO NA TEMPORADA</h2>
-         <div class="performance-content">
-            <div class="chart-container">
-              <canvas id="performance-chart"></canvas>
+      </main>
+
+      <div class="next-race">
+        <div class="next-race-header">
+          <h1>PRÓXIMA CORRIDA</h1>
+          <a href="">VER CALENDARIO -&gt;</a>
+        </div>
+
+        <div class="race-img">
+          <img src="assets/imagens/gp-australia.png" alt="Circuito de Albert Park, na Austrália" />
+
+          <div class="race-date">
+            <span class="race-day">23</span>
+            <span class="race-month">MAR</span>
+          </div>
+
+          <div class="race-info">
+            <h2>GP DA AUSTRÁLIA</h2>
+            <p>Albert Park Circuit • Melbourne</p>
+          </div>
+        </div>
+
+        <div class="race-countdown">
+          <p class="countdown-title">FALTAM</p>
+
+          <div class="countdown-grid">
+            <div class="countdown-item">
+              <span class="countdown-number">12</span>
+              <span class="countdown-unit">DIAS</span>
             </div>
 
-            <div class="points-efficiency">
-              <div class="efficiency-ring">
-                <strong>87%</strong>
-              </div>
+            <div class="countdown-item">
+              <span class="countdown-number">04</span>
+              <span class="countdown-unit">HORAS</span>
+            </div>
 
-              <p>APROVEITAMENTO DE PONTOS</p>
+            <div class="countdown-item">
+              <span class="countdown-number">32</span>
+              <span class="countdown-unit">MIN</span>
+            </div>
+
+            <div class="countdown-item">
+              <span class="countdown-number">18</span>
+              <span class="countdown-unit">SEG</span>
             </div>
           </div>
-        </section>
 
-       <section class="standings">
-    <h2>Classificação de Pilotos</h2>
+          <button class="race-details-button" type="button">
+            <a href="">VER DETALHES</a>
+          </button>
+        </div>
+      </div>
 
-    <table class="standings-table">
-        <caption>Classificação atual dos pilotos</caption>
+      <section class="performance">
+        <h2>DESEMPENHO NA TEMPORADA</h2>
+        <div class="performance-content">
+          <div class="chart-container">
+            <canvas id="performance-chart"></canvas>
+          </div>
 
-        <thead>
+          <div class="points-efficiency">
+            <div class="efficiency-ring">
+              <strong>87%</strong>
+            </div>
+
+            <p>APROVEITAMENTO DE PONTOS</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="standings">
+        <h2>Classificação de Pilotos</h2>
+
+        <table class="standings-table">
+          <caption>Classificação atual dos pilotos</caption>
+
+          <thead>
             <tr>
-                <th scope="col">Pos.</th>
-                <th scope="col">Piloto</th>
-                <th scope="col">Equipe</th>
-                <th scope="col">Pontos</th>
+              <th scope="col">Pos.</th>
+              <th scope="col">Piloto</th>
+              <th scope="col">Equipe</th>
+              <th scope="col">Pontos</th>
             </tr>
-        </thead>
+          </thead>
 
-        <tbody>
+          <tbody>
             <tr>
-                <td>1</td>
-                <th scope="row">Lando Norris</th>
-                <td>McLaren</td>
-                <td>357</td>
-            </tr>
-
-            <tr>
-                <td>2</td>
-                <th scope="row">Oscar Piastri</th>
-                <td>McLaren</td>
-                <td>336</td>
+              <td>1</td>
+              <th scope="row">Lando Norris</th>
+              <td>McLaren</td>
+              <td>357</td>
             </tr>
 
             <tr>
-                <td>3</td>
-                <th scope="row">Max Verstappen</th>
-                <td>Red Bull Racing</td>
-                <td>273</td>
+              <td>2</td>
+              <th scope="row">Oscar Piastri</th>
+              <td>McLaren</td>
+              <td>336</td>
             </tr>
 
             <tr>
-                <td>4</td>
-                <th scope="row">George Russell</th>
-                <td>Mercedes</td>
-                <td>237</td>
+              <td>3</td>
+              <th scope="row">Max Verstappen</th>
+              <td>Red Bull Racing</td>
+              <td>273</td>
             </tr>
 
             <tr>
-                <td>5</td>
-                <th scope="row">Charles Leclerc</th>
-                <td>Ferrari</td>
-                <td>190</td>
+              <td>4</td>
+              <th scope="row">George Russell</th>
+              <td>Mercedes</td>
+              <td>237</td>
             </tr>
-        </tbody>
-    </table>
-</section>
 
-<section class="recent-races">
-    <div class="recent-races-header">
-        <h2>Últimas Corridas</h2>
-        <a href="#">VER TODAS →</a>
-    </div>
+            <tr>
+              <td>5</td>
+              <th scope="row">Charles Leclerc</th>
+              <td>Ferrari</td>
+              <td>190</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-    <div class="recent-races-list">
+      <section class="recent-races">
+        <div class="recent-races-header">
+          <h2>Últimas Corridas</h2>
+          <a href="#">VER TODAS →</a>
+        </div>
 
-        <article class="race-card">
+        <div class="recent-races-list">
+          <article class="race-card">
             <img src="assets/imagens/gp-belgica.png" alt="Circuito de Spa-Francorchamps">
 
             <div class="race-card-content">
-                <span class="race-round">ROUND 14</span>
+              <span class="race-round">ROUND 14</span>
 
-                <div class="race-card-title">
-                    <img src="assets/flags/belgica.png" alt="">
-                    <h3>GP DA BÉLGICA</h3>
-                </div>
+              <div class="race-card-title">
+                <img src="assets/flags/belgica.png" alt="">
+                <h3>GP DA BÉLGICA</h3>
+              </div>
 
-                <p>Spa-Francorchamps</p>
+              <p>Spa-Francorchamps</p>
 
-                <div class="race-card-footer">
-                    <span>28 JUL 2024</span>
-                    <strong>1º</strong>
-                </div>
+              <div class="race-card-footer">
+                <span>28 JUL 2024</span>
+                <strong>1º</strong>
+              </div>
             </div>
-        </article>
+          </article>
 
-        <article class="race-card">
+          <article class="race-card">
             <img src="assets/imagens/gp-hungria.png" alt="Circuito de Hungaroring">
 
             <div class="race-card-content">
-                <span class="race-round">ROUND 13</span>
+              <span class="race-round">ROUND 13</span>
 
-                <div class="race-card-title">
-                    <img src="assets/flags/hungria.png" alt="">
-                    <h3>GP DA HUNGRIA</h3>
-                </div>
+              <div class="race-card-title">
+                <img src="assets/flags/hungria.png" alt="">
+                <h3>GP DA HUNGRIA</h3>
+              </div>
 
-                <p>Hungaroring</p>
+              <p>Hungaroring</p>
 
-                <div class="race-card-footer">
-                    <span>21 JUL 2024</span>
-                    <strong>2º</strong>
-                </div>
+              <div class="race-card-footer">
+                <span>21 JUL 2024</span>
+                <strong>2º</strong>
+              </div>
             </div>
-        </article>
+          </article>
 
-        <article class="race-card">
+          <article class="race-card">
             <img src="assets/imagens/gp-gra-bretanha.png" alt="Circuito de Silverstone">
 
             <div class="race-card-content">
-                <span class="race-round">ROUND 12</span>
+              <span class="race-round">ROUND 12</span>
 
-                <div class="race-card-title">
-                    <img src="assets/flags/reino-unido.png" alt="">
-                    <h3>GP DA GRÃ-BRETANHA</h3>
-                </div>
+              <div class="race-card-title">
+                <img src="assets/flags/reino-unido.png" alt="">
+                <h3>GP DA GRÃ-BRETANHA</h3>
+              </div>
 
-                <p>Silverstone</p>
+              <p>Silverstone</p>
 
-                <div class="race-card-footer">
-                    <span>07 JUL 2024</span>
-                    <strong>1º</strong>
-                </div>
+              <div class="race-card-footer">
+                <span>07 JUL 2024</span>
+                <strong>1º</strong>
+              </div>
             </div>
-        </article>
+          </article>
 
-        <article class="race-card">
+          <article class="race-card">
             <img src="assets/imagens/gp-austria.png" alt="Circuito Red Bull Ring">
 
             <div class="race-card-content">
-                <span class="race-round">ROUND 11</span>
+              <span class="race-round">ROUND 11</span>
 
-                <div class="race-card-title">
-                    <img src="assets/flags/austria.png" alt="">
-                    <h3>GP DA ÁUSTRIA</h3>
-                </div>
+              <div class="race-card-title">
+                <img src="assets/flags/austria.png" alt="">
+                <h3>GP DA ÁUSTRIA</h3>
+              </div>
 
-                <p>Red Bull Ring</p>
+              <p>Red Bull Ring</p>
 
-                <div class="race-card-footer">
-                    <span>30 JUN 2024</span>
-                    <strong>1º</strong>
-                </div>
+              <div class="race-card-footer">
+                <span>30 JUN 2024</span>
+                <strong>1º</strong>
+              </div>
             </div>
-        </article>
+          </article>
+        </div>
+      </section>
 
+      <aside class="quote">
+        <div class="quote-content">
+          <img
+          class="quote-mark" 
+          src="assets/imagens/quote-mark.svg" 
+          alt=""
+          aria-hidden="true"
+          >
+
+          <p>
+            "Velocidade não é só sobre andar rápido,
+            é sobre nunca desistir."
+          </p>
+
+          <strong>MAX VERSTAPPEN</strong>
+        </div>
+      </aside>
     </div>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
-  <script src="script.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
