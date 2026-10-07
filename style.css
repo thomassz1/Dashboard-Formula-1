@@ -778,6 +778,37 @@ body {
     font-size: 12px;
 }
 
+.footer-tagline {
+    margin: 0;
+    margin-left: auto;
+
+    color: #afb4be;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.calendar-page {
+    max-width: 1700px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.calendar-controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 24px;
+}
+
+.calendar-controls h1 {
+    margin: 0;
+    font-family: "Teko", sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
 
 @media (max-width: 1400px) {
       .dashboard{
@@ -949,5 +980,9 @@ body {
         height: 140px;
     }
 
+    .footer-tagline {
+        flex-basis: 100%;
+        margin-left: 0;
+}
     
 }

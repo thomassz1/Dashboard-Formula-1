@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendário | Dashboard Fórmula 1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main class="calendar-page">
+      <header class="calendar-controls">
+        <h1>Calendário da temporada <span>2024</span></h1>
+
+        <div class="season-control">
+          <label for="season-select">Temporada</label>
+
+          <select id="season-select" name="season">
+            <option value="2024">2024</option>
+          </select>
+        </div>
+
+        <div class="calendar-filters" role="group" aria-label="Filtrar corridas">
+          <button type="button" class="is-active" data-filter="all" aria-pressed="true">Todos</button>
+          <button type="button" data-filter="upcoming" aria-pressed="false">Próximas</button>
+          <button type="button" data-filter="completed" aria-pressed="false">Concluídas</button>
+        </div>
+      </header>
+    </main>
+  </body>
+</html>
