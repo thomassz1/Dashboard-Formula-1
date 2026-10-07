@@ -741,6 +741,44 @@ body {
     letter-spacing: 1px;
 }
 
+.footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    max-width: 1700px;
+    margin: 20px auto;
+    padding: 24px 20px;
+
+    border-top: 1px solid #24272d;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-brand img {
+    width: 90px;
+}
+
+.footer-brand div {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-brand strong {
+    font-size: 14px;
+}
+
+.footer-brand span {
+    color: #afb4be;
+    font-size: 12px;
+}
+
+
 @media (max-width: 1400px) {
       .dashboard{
         grid-template-columns: minmax(0,1fr);
