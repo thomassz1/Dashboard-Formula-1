@@ -8,9 +8,43 @@
   </head>
 
   <body>
+    <header class="header">
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-menu">
+        <span aria-hidden="true">☰</span>
+      </button>
+
+      <a class="brand-link" href="index.html" aria-label="Página inicial">
+        <img class="logo" src="assets/imagens/f1-logo-vermelha.png" alt="Fórmula 1" />
+      </a>
+
+      <nav class="menu" id="main-menu" aria-label="Navegação principal">
+        <a href="index.html">INÍCIO</a>
+        <span class="menu-placeholder" aria-disabled="true">PILOTOS</span>
+        <span class="menu-placeholder" aria-disabled="true">EQUIPES</span>
+        <a href="calendario.html" class="active" aria-current="page">CALENDÁRIO</a>
+        <span class="menu-placeholder" aria-disabled="true">RESULTADOS</span>
+        <span class="menu-placeholder" aria-disabled="true">ESTATÍSTICAS</span>
+        <span class="menu-placeholder" aria-disabled="true">QUIZ</span>
+        <span class="menu-placeholder" aria-disabled="true">SOBRE</span>
+      </nav>
+
+      <!-- Busca e tema serão conectados na etapa de JavaScript. -->
+      <div class="header-search">
+        <input type="search" id="site-search" name="q" placeholder="Buscar piloto, equipe..." aria-label="Buscar piloto ou equipe" />
+        <svg class="header-search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" />
+          <path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <button class="theme-toggle" type="button" aria-label="Alternar tema" aria-pressed="false">
+        <span aria-hidden="true">&#9790;</span>
+      </button>
+    </header>
+
     <main class="calendar-page">
       <header class="calendar-controls">
-        <h1>Calendário da temporada <span>2024</span></h1>
+        <h1>Calendário <span class="calendar-title-prefix">da temporada</span> <span class="calendar-title-year">2024</span></h1>
 
         <div class="season-control">
           <label for="season-select">Temporada</label>
@@ -26,6 +60,382 @@
           <button type="button" data-filter="completed" aria-pressed="false">Concluídas</button>
         </div>
       </header>
+
+      <section class="calendar-next-race" aria-labelledby="next-race-title">
+        <h2 id="next-race-title">Próxima corrida</h2>
+
+        <div class="calendar-next-race-content">
+          <img
+            class="calendar-race-image"
+            src="assets/imagens/gp-australia.png"
+            alt="Circuito de Albert Park, em Melbourne"
+          />
+
+          <div class="calendar-race-summary">
+            <div class="calendar-race-heading">
+              <div class="calendar-race-date">
+                <span class="calendar-race-day">23</span>
+                <span class="calendar-race-month">MAR</span>
+              </div>
+
+              <span class="calendar-race-flag" role="img" aria-label="Austrália">AU</span>
+
+              <div class="calendar-race-info">
+                <h3>GP da Austrália</h3>
+                <p>Albert Park Circuit • Melbourne</p>
+              </div>
+            </div>
+
+            <div class="calendar-countdown">
+              <p class="calendar-countdown-title">Faltam</p>
+
+              <div class="calendar-countdown-grid">
+                <div class="calendar-countdown-item">
+                  <span class="calendar-countdown-number" data-unit="days">12</span>
+                  <span class="calendar-countdown-unit">Dias</span>
+                </div>
+
+                <div class="calendar-countdown-item">
+                  <span class="calendar-countdown-number" data-unit="hours">04</span>
+                  <span class="calendar-countdown-unit">Horas</span>
+                </div>
+
+                <div class="calendar-countdown-item">
+                  <span class="calendar-countdown-number" data-unit="minutes">32</span>
+                  <span class="calendar-countdown-unit">Minutos</span>
+                </div>
+
+                <div class="calendar-countdown-item">
+                  <span class="calendar-countdown-number" data-unit="seconds">18</span>
+                  <span class="calendar-countdown-unit">Segundos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <img class="calendar-featured-track" src="assets/tracks/australia-albert-park.svg" alt="Traçado do circuito de Albert Park" width="220" height="132" />
+        </div>
+
+        <div class="calendar-circuit-info">
+          <div class="calendar-circuit-heading">
+            <span class="calendar-circuit-flag" role="img" aria-label="Austrália">AU</span>
+            <h3>Albert Park Circuit</h3>
+          </div>
+
+          <dl class="calendar-circuit-stats">
+            <div>
+              <dt>Primeira corrida</dt>
+              <dd>1996</dd>
+            </div>
+
+            <div>
+              <dt>Número de voltas</dt>
+              <dd>58</dd>
+            </div>
+
+            <div>
+              <dt>Extensão do circuito</dt>
+              <dd>5,278 km</dd>
+            </div>
+
+            <div>
+              <dt>Distância da corrida</dt>
+              <dd>306,124 km</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- Dados demonstrativos do layout: datas e estados ainda serão validados. -->
+      <ol class="calendar-race-list" role="list" aria-label="Etapas da temporada">
+        <li class="calendar-event is-next" data-status="upcoming">
+          <span class="calendar-event-round" aria-hidden="true">1</span>
+
+          <div class="calendar-event-date">
+            <span class="calendar-event-day">23</span>
+            <span class="calendar-event-month">MAR</span>
+          </div>
+
+          <span class="calendar-event-flag" role="img" aria-label="Austrália">AU</span>
+
+          <div class="calendar-event-info">
+            <h3>GP da Austrália</h3>
+            <p>Albert Park Circuit • Melbourne</p>
+          </div>
+
+          <div class="calendar-event-track">
+            <img src="assets/tracks/australia-albert-park.svg" alt="Traçado de Albert Park Circuit" width="120" height="72" loading="lazy" />
+          </div>
+
+          <div class="calendar-event-stats">
+            <span>5,278 km</span>
+            <span>58 voltas</span>
+          </div>
+
+          <span class="calendar-event-status">Próxima</span>
+        </li>
+
+        <li class="calendar-event" data-status="completed">
+          <span class="calendar-event-round" aria-hidden="true">2</span>
+
+          <div class="calendar-event-date">
+            <span class="calendar-event-day">09</span>
+            <span class="calendar-event-month">MAR</span>
+          </div>
+
+          <span class="calendar-event-flag" role="img" aria-label="Bahrein">BH</span>
+
+          <div class="calendar-event-info">
+            <h3>GP do Bahrein</h3>
+            <p>Bahrain International Circuit • Sakhir</p>
+          </div>
+
+          <div class="calendar-event-track">
+            <img src="assets/tracks/bahrein-sakhir.svg" alt="Traçado de Bahrain International Circuit" width="120" height="72" loading="lazy" />
+          </div>
+
+          <div class="calendar-event-stats">
+            <span>5,412 km</span>
+            <span>57 voltas</span>
+          </div>
+
+          <span class="calendar-event-status">Concluída</span>
+        </li>
+
+        <li class="calendar-event" data-status="completed">
+          <span class="calendar-event-round" aria-hidden="true">3</span>
+
+          <div class="calendar-event-date">
+            <span class="calendar-event-day">24</span>
+            <span class="calendar-event-month">MAR</span>
+          </div>
+
+          <span class="calendar-event-flag" role="img" aria-label="Arábia Saudita">SA</span>
+
+          <div class="calendar-event-info">
+            <h3>GP da Arábia Saudita</h3>
+            <p>Jeddah Corniche Circuit • Jeddah</p>
+          </div>
+
+          <div class="calendar-event-track">
+            <img src="assets/tracks/arabia-saudita-jeddah.svg" alt="Traçado de Jeddah Corniche Circuit" width="120" height="72" loading="lazy" />
+          </div>
+
+          <div class="calendar-event-stats">
+            <span>6,174 km</span>
+            <span>50 voltas</span>
+          </div>
+
+          <span class="calendar-event-status">Concluída</span>
+        </li>
+
+        <li class="calendar-event" data-status="completed">
+          <span class="calendar-event-round" aria-hidden="true">4</span>
+
+          <div class="calendar-event-date">
+            <span class="calendar-event-day">07</span>
+            <span class="calendar-event-month">ABR</span>
+          </div>
+
+          <span class="calendar-event-flag" role="img" aria-label="Japão">JP</span>
+
+          <div class="calendar-event-info">
+            <h3>GP do Japão</h3>
+            <p>Suzuka Circuit • Suzuka</p>
+          </div>
+
+          <div class="calendar-event-track">
+            <img src="assets/tracks/japao-suzuka.svg" alt="Traçado de Suzuka Circuit" width="120" height="72" loading="lazy" />
+          </div>
+
+          <div class="calendar-event-stats">
+            <span>5,807 km</span>
+            <span>53 voltas</span>
+          </div>
+
+          <span class="calendar-event-status">Concluída</span>
+        </li>
+
+        <li class="calendar-event" data-status="completed">
+          <span class="calendar-event-round" aria-hidden="true">5</span>
+
+          <div class="calendar-event-date">
+            <span class="calendar-event-day">21</span>
+            <span class="calendar-event-month">ABR</span>
+          </div>
+
+          <span class="calendar-event-flag" role="img" aria-label="China">CN</span>
+
+          <div class="calendar-event-info">
+            <h3>GP da China</h3>
+            <p>Shanghai International Circuit • Xangai</p>
+          </div>
+
+          <div class="calendar-event-track">
+            <img src="assets/tracks/china-shanghai.svg" alt="Traçado de Shanghai International Circuit" width="120" height="72" loading="lazy" />
+          </div>
+
+          <div class="calendar-event-stats">
+            <span>5,451 km</span>
+            <span>56 voltas</span>
+          </div>
+
+          <span class="calendar-event-status">Concluída</span>
+        </li>
+
+        <li class="calendar-event" data-status="completed">
+          <span class="calendar-event-round" aria-hidden="true">6</span>
+
+          <div class="calendar-event-date">
+            <span class="calendar-event-day">05</span>
+            <span class="calendar-event-month">MAI</span>
+          </div>
+
+          <span class="calendar-event-flag" role="img" aria-label="Estados Unidos">US</span>
+
+          <div class="calendar-event-info">
+            <h3>GP de Miami</h3>
+            <p>Miami International Autodrome • Miami</p>
+          </div>
+
+          <div class="calendar-event-track">
+            <img src="assets/tracks/miami.svg" alt="Traçado de Miami International Autodrome" width="120" height="72" loading="lazy" />
+          </div>
+
+          <div class="calendar-event-stats">
+            <span>5,412 km</span>
+            <span>57 voltas</span>
+          </div>
+
+          <span class="calendar-event-status">Concluída</span>
+        </li>
+
+        <li class="calendar-event" data-status="completed">
+          <span class="calendar-event-round" aria-hidden="true">7</span>
+
+          <div class="calendar-event-date">
+            <span class="calendar-event-day">19</span>
+            <span class="calendar-event-month">MAI</span>
+          </div>
+
+          <span class="calendar-event-flag" role="img" aria-label="Itália">IT</span>
+
+          <div class="calendar-event-info">
+            <h3>GP da Emília-Romanha</h3>
+            <p>Autodromo Enzo e Dino Ferrari • Ímola</p>
+          </div>
+
+          <div class="calendar-event-track">
+            <img src="assets/tracks/emilia-romanha-imola.svg" alt="Traçado de Autodromo Enzo e Dino Ferrari" width="120" height="72" loading="lazy" />
+          </div>
+
+          <div class="calendar-event-stats">
+            <span>4,909 km</span>
+            <span>63 voltas</span>
+          </div>
+
+          <span class="calendar-event-status">Concluída</span>
+        </li>
+
+        <li class="calendar-event" data-status="completed">
+          <span class="calendar-event-round" aria-hidden="true">8</span>
+
+          <div class="calendar-event-date">
+            <span class="calendar-event-day">26</span>
+            <span class="calendar-event-month">MAI</span>
+          </div>
+
+          <span class="calendar-event-flag" role="img" aria-label="Mônaco">MC</span>
+
+          <div class="calendar-event-info">
+            <h3>GP de Mônaco</h3>
+            <p>Circuit de Monaco • Monte Carlo</p>
+          </div>
+
+          <div class="calendar-event-track">
+            <img src="assets/tracks/monaco.svg" alt="Traçado de Circuit de Monaco" width="120" height="72" loading="lazy" />
+          </div>
+
+          <div class="calendar-event-stats">
+            <span>3,337 km</span>
+            <span>78 voltas</span>
+          </div>
+
+          <span class="calendar-event-status">Concluída</span>
+        </li>
+
+        <li class="calendar-event" data-status="completed">
+          <span class="calendar-event-round" aria-hidden="true">9</span>
+
+          <div class="calendar-event-date">
+            <span class="calendar-event-day">09</span>
+            <span class="calendar-event-month">JUN</span>
+          </div>
+
+          <span class="calendar-event-flag" role="img" aria-label="Canadá">CA</span>
+
+          <div class="calendar-event-info">
+            <h3>GP do Canadá</h3>
+            <p>Circuit Gilles Villeneuve • Montreal</p>
+          </div>
+
+          <div class="calendar-event-track">
+            <img src="assets/tracks/canada-montreal.svg" alt="Traçado de Circuit Gilles Villeneuve" width="120" height="72" loading="lazy" />
+          </div>
+
+          <div class="calendar-event-stats">
+            <span>4,361 km</span>
+            <span>70 voltas</span>
+          </div>
+
+          <span class="calendar-event-status">Concluída</span>
+        </li>
+
+        <li class="calendar-event" data-status="upcoming">
+          <span class="calendar-event-round" aria-hidden="true">10</span>
+
+          <div class="calendar-event-date">
+            <span class="calendar-event-day">23</span>
+            <span class="calendar-event-month">JUN</span>
+          </div>
+
+          <span class="calendar-event-flag" role="img" aria-label="Espanha">ES</span>
+
+          <div class="calendar-event-info">
+            <h3>GP da Espanha</h3>
+            <p>Circuit de Barcelona-Catalunya • Barcelona</p>
+          </div>
+
+          <div class="calendar-event-track">
+            <img src="assets/tracks/espanha-barcelona-catalunya.svg" alt="Traçado de Circuit de Barcelona-Catalunya" width="120" height="72" loading="lazy" />
+          </div>
+
+          <div class="calendar-event-stats">
+            <span>4,657 km</span>
+            <span>66 voltas</span>
+          </div>
+
+          <span class="calendar-event-status">Próxima</span>
+        </li>
+      </ol>
     </main>
+
+    <footer class="footer">
+        <div class="footer-brand">
+            <img
+                src="assets/imagens/f1-logo-vermelha.png"
+                alt="Logo Fórmula 1"
+            />
+
+            <div>
+                <strong>DRIVEN BY PASSION.</strong>
+                <span>BUILT FOR FANS.</span>
+            </div>
+        </div>
+
+        <p class="footer-tagline">LIFE IS BETTER AT 300 KM/H</p>
+    </footer>
+
+    <!-- O script específico desta página será conectado na etapa de JavaScript. -->
   </body>
 </html>
