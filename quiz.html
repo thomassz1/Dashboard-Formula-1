@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz | Dashboard Fórmula 1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-menu">
+        <span aria-hidden="true">☰</span>
+      </button>
+
+      <a class="brand-link" href="index.html" aria-label="Página inicial">
+        <img class="logo" src="assets/imagens/f1-logo-vermelha.png" alt="Fórmula 1" />
+      </a>
+
+      <nav class="menu" id="main-menu" aria-label="Navegação principal">
+        <a href="index.html">INÍCIO</a>
+        <a href="pilotos.html">PILOTOS</a>
+        <a href="equipes.html">EQUIPES</a>
+        <a href="calendario.html">CALENDÁRIO</a>
+        <a href="resultados.html">RESULTADOS</a>
+        <a href="estatisticas.html">ESTATÍSTICAS</a>
+        <a href="quiz.html" class="active" aria-current="page">QUIZ</a>
+        <a href="sobre.html">SOBRE</a>
+      </nav>
+
+      <!-- Busca e tema serão conectados na etapa de JavaScript. -->
+      <div class="header-search">
+        <input type="search" id="site-search" name="q" placeholder="Buscar piloto, equipe..." aria-label="Buscar piloto ou equipe" />
+        <svg class="header-search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" />
+          <path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <button class="theme-toggle" type="button" aria-label="Alternar tema" aria-pressed="false">
+        <span aria-hidden="true">&#9790;</span>
+      </button>
+    </header>
+
+    <main class="page-content">
+      <h1>Quiz</h1>
+      <p>Em construção. O conteúdo desta página será desenvolvido nas próximas etapas do projeto.</p>
+      <a href="index.html">Voltar ao início</a>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-brand">
+            <img
+                src="assets/imagens/f1-logo-vermelha.png"
+                alt="Logo Fórmula 1"
+            />
+
+            <div>
+                <strong>DRIVEN BY PASSION.</strong>
+                <span>BUILT FOR FANS.</span>
+            </div>
+        </div>
+
+        <p class="footer-tagline">LIFE IS BETTER AT 300 KM/H</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

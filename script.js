@@ -1,33 +1,31 @@
-const menuButton = document.querySelector(".menu-toggle");
-const menu = document.querySelector("#main-menu")
+(() => {
+  const menuButton = document.querySelector(".menu-toggle");
+  const menu = document.getElementById("main-menu");
 
-function setMenuOpen(isOpen) {
-  menu.classList.toggle("is-open", isOpen);
+  if (!menuButton || !menu) return;
 
-  menuButton.setAttribute("aria-expanded", String(isOpen));
-
-  menuButton.setAttribute(
-    "aria-label",
-    isOpen ? "Fechar menu" : "Abrir menu"
-  )
-}
-
-menuButton.addEventListener("click", () => {
-  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-
-  setMenuOpen(!isOpen);
-});
-
-menu.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    setMenuOpen(false);
-    menuButton.focus();
+  function setMenuOpen(isOpen) {
+    menu.classList.toggle("is-open", isOpen);
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
   }
-});
-  
-  
+
+  menuButton.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    setMenuOpen(!isOpen);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
+      setMenuOpen(false);
+      menuButton.focus();
+    }
+  });
+})();
+
 const canvas = document.getElementById("performance-chart");
 
+if (canvas && typeof Chart === "function") {
   new Chart(canvas, {
     type: "line",
 
@@ -92,3 +90,4 @@ const canvas = document.getElementById("performance-chart");
       }
     }
   });
+}
