@@ -518,6 +518,7 @@ body {
 .standings {
     grid-area: standings;
     min-width: 0;
+    height: 259px;
     padding: 16px;
     border: 1px solid red;
     border-radius: 10px;
@@ -536,7 +537,7 @@ body {
 
 .standings-table th,
 .standings-table td {
-    padding: 8px 6px;
+    padding: 6px 6px;
     text-align: left;
 }
 
@@ -709,7 +710,7 @@ body {
     display: flex;
     
     grid-area: quote;
-    min-height: 280px;
+    min-height: 382px;
     padding: 24px;
 
     align-items: flex-end;
@@ -1274,8 +1275,25 @@ body {
     outline-offset: 3px;
 }
 
+@media (max-width: 1700px) {
+.dashboard {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+    
+    grid-template-areas: 
+    "driver race"
+    "performance standings"
+    "recent-races quote";
+
+    max-width: 1500px;
+    margin: 20px auto;
+    gap: 20px;
+    align-items: start;
+}
+}
+
+
 @media (max-width: 1400px) {
-      .dashboard{
+      .dashboard {
         grid-template-columns: minmax(0,1fr);
 
         grid-template-areas:
@@ -1318,7 +1336,7 @@ body {
 @media (max-width: 1100px) {
 
     .driver {
-        grid-template-columns: minmax(0, 1fr) minmax(0,1fr);
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
         grid-template-areas: 
             "photo summary"
@@ -1355,15 +1373,27 @@ body {
     }
 
     .menu-toggle {
-        display: grid;
-        place-items: center;
-    }
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    place-items: center;
+}
+
+    .header > .brand-link,
+    .header > .logo {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    min-width: 0;
+}
 
     .header .logo {
-        justify-self: center;
-        max-width: 100%;
-        height: auto;
-    }
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+    
 
     .menu {
         display: none;
