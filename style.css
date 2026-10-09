@@ -13,12 +13,21 @@ body {
     font-family: "Rajdhani", sans-serif;
 }
 
+.dashboard,
+.calendar-page,
+.page-content,
+.footer {
+    width: calc(100% - 80px);
+    max-width: 1800px;
+    margin: 20px auto;
+}
+
 .header {
     display: flex;
 
     align-items: center;
     min-height: 64px;
-    padding: 8px 20px;
+    padding: 8px max(40px, calc((100% - 1800px) / 2));
     border-bottom: 1px solid #24272d;
    
 }
@@ -77,8 +86,6 @@ body {
     "performance standings"
     "recent-races quote";
 
-    max-width: 1700px;
-    margin: 20px auto;
     gap: 20px;
     align-items: start;
 }
@@ -758,9 +765,7 @@ body {
     flex-wrap: wrap;
     gap: 24px;
 
-    max-width: 1700px;
-    margin: 20px auto;
-    padding: 24px 20px;
+    padding: 24px 0;
 
     border-top: 1px solid #24272d;
 }
@@ -807,9 +812,6 @@ body {
         "events";
 
     gap: 20px;
-    max-width: 1700px;
-    margin: 20px auto;
-    padding: 0 20px;
 }
 
 .calendar-controls {
@@ -1275,23 +1277,6 @@ body {
     outline-offset: 3px;
 }
 
-@media (max-width: 1700px) {
-.dashboard {
-    grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
-    
-    grid-template-areas: 
-    "driver race"
-    "performance standings"
-    "recent-races quote";
-
-    max-width: 1500px;
-    margin: 20px auto;
-    gap: 20px;
-    align-items: start;
-}
-}
-
-
 @media (max-width: 1400px) {
       .dashboard {
         grid-template-columns: minmax(0,1fr);
@@ -1303,7 +1288,7 @@ body {
          "standings"
          "recent-races";
 
-         margin: 12px;
+         margin-block: 12px;
          gap: 16px;
     }
 
@@ -1334,6 +1319,13 @@ body {
 }
 
 @media (max-width: 1100px) {
+
+    .dashboard,
+    .calendar-page,
+    .page-content,
+    .footer {
+        width: calc(100% - 40px);
+    }
 
     .driver {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -1369,7 +1361,7 @@ body {
         grid-template-columns: 44px minmax(0, 1fr) 44px;
         
         gap: 8px;
-        padding: 8px 12px;
+        padding: 8px 20px;
     }
 
     .menu-toggle {
