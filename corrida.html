@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GP da Austrália | Dashboard Fórmula 1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-menu">
+        <span aria-hidden="true">☰</span>
+      </button>
+
+      <a class="brand-link" href="index.html" aria-label="Página inicial">
+        <img class="logo" src="assets/imagens/f1-logo-vermelha.png" alt="Fórmula 1" />
+      </a>
+
+      <nav class="menu" id="main-menu" aria-label="Navegação principal">
+        <a href="index.html">INÍCIO</a>
+        <a href="pilotos.html">PILOTOS</a>
+        <a href="equipes.html">EQUIPES</a>
+        <a href="calendario.html" class="active">CALENDÁRIO</a>
+        <a href="resultados.html">RESULTADOS</a>
+        <a href="estatisticas.html">ESTATÍSTICAS</a>
+        <a href="quiz.html">QUIZ</a>
+        <a href="sobre.html">SOBRE</a>
+      </nav>
+    </header>
+
+    <main class="page-content race-details-page">
+      <nav class="race-breadcrumb" aria-label="Caminho da página">
+        <a href="index.html">Início</a>
+        <span aria-hidden="true"> / </span>
+        <a href="calendario.html">Calendário</a>
+        <span aria-hidden="true"> / </span>
+        <span id="race-breadcrumb-name" aria-current="page">GP da Austrália</span>
+      </nav>
+
+      <header class="race-page-heading">
+        <p class="race-eyebrow" id="race-meta">Temporada 2024 <span aria-hidden="true">/</span> Austrália</p>
+        <h1 id="race-name">GP da Austrália</h1>
+        <p class="race-location" id="race-location">Albert Park Circuit <span aria-hidden="true">•</span> Melbourne, Austrália</p>
+      </header>
+
+      <!-- Dados do circuito reaproveitados do calendário atual. -->
+      <section class="race-circuit" aria-labelledby="race-circuit-title">
+        <h2 id="race-circuit-title" class="race-section-title">Sobre o circuito</h2>
+
+        <div class="race-circuit-gallery">
+          <figure class="race-circuit-photo">
+            <img id="race-photo" src="assets/imagens/gp-australia.png" alt="Pista e arquibancadas do circuito de Albert Park, em Melbourne" />
+            <figcaption>
+              <span class="race-eyebrow" id="race-photo-location">Melbourne, Austrália</span>
+              <strong id="race-circuit-name">Albert Park Circuit</strong>
+            </figcaption>
+          </figure>
+
+          <figure class="race-circuit-map">
+            <figcaption>Traçado do circuito</figcaption>
+            <img id="race-track" src="assets/tracks/australia-albert-park.svg" alt="Traçado do circuito de Albert Park" width="500" height="300" />
+            <p id="race-track-caption">Albert Park <span aria-hidden="true">/</span> Austrália</p>
+          </figure>
+        </div>
+
+        <dl class="race-track-stats" aria-label="Dados do circuito">
+          <div>
+            <dt>Extensão do circuito</dt>
+            <dd id="race-length">5,278 <span>km</span></dd>
+          </div>
+          <div>
+            <dt>Número de voltas</dt>
+            <dd id="race-laps">58</dd>
+          </div>
+          <div>
+            <dt>Distância da corrida</dt>
+            <dd id="race-distance">306,124 <span>km</span></dd>
+          </div>
+          <div>
+            <dt>Primeira corrida</dt>
+            <dd id="race-first-gp">1996</dd>
+          </div>
+        </dl>
+      </section>
+
+      <div class="race-weekend-grid">
+        <section class="race-info-panel" aria-labelledby="race-schedule-title">
+          <p class="race-eyebrow">O fim de semana</p>
+          <h2 id="race-schedule-title" class="race-section-title">Programação</h2>
+          <p class="race-panel-description">Os horários desta etapa ainda não estão disponíveis.</p>
+          <dl class="race-session-list">
+            <div>
+              <dt>Treinos livres</dt>
+              <dd>Horários indisponíveis</dd>
+            </div>
+            <div>
+              <dt>Classificação</dt>
+              <dd>Horário indisponível</dd>
+            </div>
+            <div>
+              <dt>Corrida</dt>
+              <dd>Horário indisponível</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="race-info-panel race-results-panel" aria-labelledby="race-results-title">
+          <p class="race-eyebrow">A classificação</p>
+          <h2 id="race-results-title" class="race-section-title">Resultados do GP</h2>
+          <div class="race-results-empty">
+            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M5 21V3M5 4C10 1 14 7 20 4V14C14 17 10 11 5 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <h3>Resultados indisponíveis</h3>
+            <p>Ainda não há resultados disponíveis para esta etapa.</p>
+          </div>
+        </section>
+      </div>
+
+      <nav class="race-page-actions" aria-label="Navegação da corrida">
+        <a class="race-back-link" href="calendario.html"><span aria-hidden="true">←</span> Voltar ao calendário</a>
+        <a href="index.html">Voltar ao início <span aria-hidden="true">→</span></a>
+      </nav>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <img src="assets/imagens/f1-logo-vermelha.png" alt="Logo Fórmula 1" />
+        <div>
+          <strong>DRIVEN BY PASSION.</strong>
+          <span>BUILT FOR FANS.</span>
+        </div>
+      </div>
+      <p class="footer-tagline">LIFE IS BETTER AT 300 KM/H</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

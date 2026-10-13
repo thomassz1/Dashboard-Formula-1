@@ -1,5 +1,7 @@
+/* 01. Fontes */
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Teko:wght@500;600;700&display=swap');
 
+/* 02. Base e modelo de caixa */
 *,
 *::before,
 *::after {
@@ -13,6 +15,7 @@ body {
     font-family: "Rajdhani", sans-serif;
 }
 
+/* 03. Contêineres e margens compartilhados */
 .dashboard,
 .calendar-page,
 .page-content,
@@ -22,6 +25,7 @@ body {
     margin: 20px auto;
 }
 
+/* 04. Cabeçalho e navegação */
 .header {
     display: flex;
 
@@ -29,7 +33,6 @@ body {
     min-height: 64px;
     padding: 8px max(40px, calc((100% - 1800px) / 2));
     border-bottom: 1px solid #24272d;
-   
 }
 
 .menu-toggle {
@@ -48,7 +51,7 @@ body {
     width: 150px;
 }
 
-.menu  {
+.menu {
     display: flex;
     gap: 32px;
     margin-left: 60px;
@@ -77,36 +80,37 @@ body {
     color: red;
 }
 
+/* 05. Grid do dashboard */
 .dashboard {
     display: grid;
     grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
-    
-    grid-template-areas: 
-    "driver race"
-    "performance standings"
-    "recent-races quote";
+
+    grid-template-areas:
+        "driver race"
+        "performance standings"
+        "recent-races quote";
 
     gap: 20px;
     align-items: start;
 }
 
-
+/* 06. Piloto em destaque */
 .driver {
     position: relative;
     grid-area: driver;
 
     display: grid;
-    grid-template-columns: 
+    grid-template-columns:
         minmax(0, 1fr)
         minmax(0, 1.2fr)
         minmax(240px, 0.6fr);
-    grid-template-areas: 
+    grid-template-areas:
         "photo summary team"
         "photo stats   team";
     gap: 20px;
     align-items: start;
 
-    min-width: 0; 
+    min-width: 0;
     min-height: 400px;
     overflow: hidden;
 
@@ -120,18 +124,17 @@ body {
 }
 
 .driver h1 {
-     margin: 0;
+    margin: 0;
     line-height: .9;
 }
 
 .driver-name {
-   
     font-size: 40px;
 }
 
 .driver-portrait {
     grid-area: photo;
-    
+
     position: relative;
     align-self: stretch;
     min-width: 0;
@@ -139,15 +142,14 @@ body {
 }
 
 .driver-photo {
-   position: absolute;
-   inset: 0;
+    position: absolute;
+    inset: 0;
 
-   width: 100%;
-   height: 100%;
-   
-   object-fit: cover;
-   object-position: center top;
-    
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center top;
 }
 
 .driver-summary {
@@ -156,14 +158,13 @@ body {
     container-type: inline-size;
 }
 
-.driver-surname  {
+.driver-surname {
     font-size: clamp(1rem, 15cqi, 4rem);
     overflow-wrap: anywhere;
     color: #ff1e2d;
-
 }
 
-.driver-info{
+.driver-info {
     display: flex;
     flex-direction: row;
     font-size: 13px;
@@ -177,10 +178,8 @@ body {
     font-size: 25px;
 }
 
-
 .driver-info img {
     width: 40px;
-   
 }
 
 .driver-phrase {
@@ -193,14 +192,14 @@ body {
 
 /* Distribui os quatro cards em colunas com a mesma largura. */
 .driver-stats {
-   grid-area: stats;
+    grid-area: stats;
 
-   display: grid;
-   grid-template-columns: repeat(4, minmax(0, 1fr));
-   gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
 
-   min-width: 0;
-   margin: 0;
+    min-width: 0;
+    margin: 0;
 }
 
 .driver-stat {
@@ -238,6 +237,7 @@ body {
     height: 24px;
 }
 
+/* 07. Informações da equipe */
 .driver > .team-info {
     grid-area: team;
     min-width: 0;
@@ -256,7 +256,6 @@ body {
 
     border-bottom: 1px solid red;
     padding-bottom: 12px;
-    
 }
 
 .team-name {
@@ -265,7 +264,7 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
     gap: 20px 12px;
-    
+
     justify-content: center;
 }
 
@@ -275,15 +274,14 @@ body {
 
 .team-name p,
 .team-name span {
-    
     margin: 0;
-
 }
 
 .team-name span {
     text-align: right;
 }
 
+/* 08. Próxima corrida no dashboard e botão de detalhes */
 .driver,
 .next-race {
     margin: 0;
@@ -291,10 +289,10 @@ body {
 
 .next-race {
     grid-area: race;
-    
+
     border: 1px solid red;
     border-radius: 10px;
-    
+
     height: 400px;
 }
 
@@ -305,7 +303,7 @@ body {
 
 .next-race a {
     margin-right: 10px;
-    
+
     color: #ff1e2d;
     text-decoration: none;
     font-weight: 500;
@@ -314,7 +312,7 @@ body {
 .next-race-header {
     display: grid;
     grid-template-columns: 1fr auto;
-    align-items: center; 
+    align-items: center;
 }
 
 .race-img {
@@ -335,7 +333,7 @@ body {
     left: 16px;
     width: 56px;
     height: 60px;
-    
+
     background-color: #eeeaf5;
     color: #101018;
     border-radius: 6px;
@@ -363,7 +361,7 @@ body {
     left: 16px;
     right: 16px;
     bottom: 16px;
-    
+
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
@@ -383,8 +381,8 @@ body {
 }
 
 .countdown-title {
-   margin: 0 0 10px;
-   font-size: 14px;
+    margin: 0 0 10px;
+    font-size: 14px;
 }
 
 .countdown-grid {
@@ -414,26 +412,25 @@ body {
     color: #afb4be;
 }
 
-.race-details-button {
+.next-race .race-details-button,
+.calendar-next-race .race-details-button {
+    display: block;
     width: 100%;
     margin-top: 20px;
+    margin-right: 0;
     padding: 12px;
 
     border: none;
     border-radius: 6px;
     background-color: #ed0b1b;
-
-    
-
-    cursor: pointer;
-}
-
-.race-details-button a {
     color: white;
-    
     font-family: inherit;
     font-size: 12px;
     font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
 }
 
 .race-details-button:hover {
@@ -445,11 +442,12 @@ body {
     outline-offset: 5px;
 }
 
+/* 09. Desempenho na temporada */
 .performance {
     grid-area: performance;
-    
+
     margin: 0;
-    
+
     width: auto;
     min-height: 200px;
     padding: 20px;
@@ -469,7 +467,6 @@ body {
     flex: 1;
     min-width: 0;
     height: 130px;
-    
 }
 
 .performance-content {
@@ -516,12 +513,13 @@ body {
     height: 90px;
     border-radius: 50%;
     background-color: black;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* 10. Classificação de pilotos */
 .standings {
     grid-area: standings;
     min-width: 0;
@@ -606,6 +604,7 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* 11. Últimas corridas */
 .recent-races {
     grid-area: recent-races;
     padding: 20px;
@@ -624,13 +623,6 @@ body {
 .recent-races-header h2 {
     margin: 0;
     font-size: 20px;
-}
-
-.recent-races-header a {
-    color: #ff1e2d;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
 }
 
 .recent-races-list {
@@ -700,7 +692,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    
+
     min-width: 36px;
     height: 28px;
 
@@ -713,9 +705,10 @@ body {
     font-weight: 700;
 }
 
+/* 12. Destaque visual e citação */
 .quote {
     display: flex;
-    
+
     grid-area: quote;
     min-height: 382px;
     padding: 24px;
@@ -731,9 +724,8 @@ body {
             rgba(0, 0, 0, 0.85)
         ),
         url("assets/imagens/quote-bg.png") 70% 20% / cover no-repeat;
-    
-    overflow: hidden;
 
+    overflow: hidden;
 }
 
 .quote-content {
@@ -759,6 +751,7 @@ body {
     letter-spacing: 1px;
 }
 
+/* 13. Rodapé */
 .footer {
     display: flex;
     align-items: center;
@@ -803,6 +796,7 @@ body {
     font-weight: 600;
 }
 
+/* 14. Calendário: estrutura e controles */
 .calendar-page {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -862,6 +856,7 @@ body {
     outline-offset: 3px;
 }
 
+/* 15. Calendário: próxima corrida */
 .calendar-next-race {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 280px;
@@ -973,9 +968,13 @@ body {
     color: #d2d5dd;
 }
 
+.calendar-countdown,
+.calendar-next-race .race-details-button {
+    max-width: 400px;
+}
+
 .calendar-countdown {
     margin-top: 24px;
-    max-width: 400px;
 }
 
 .calendar-countdown-title {
@@ -1031,6 +1030,7 @@ body {
     line-height: 1.2;
 }
 
+/* 16. Calendário: lista de GPs */
 .calendar-race-list {
     grid-area: events;
     display: grid;
@@ -1169,6 +1169,7 @@ body {
     color: #ff1e2d;
 }
 
+/* 17. Calendário: filtros */
 .calendar-filters {
     display: flex;
     gap: 8px;
@@ -1208,6 +1209,7 @@ body {
     outline-offset: 3px;
 }
 
+/* 18. Calendário: traçado e identificação do circuito */
 .calendar-featured-track {
     position: relative;
     z-index: 1;
@@ -1237,6 +1239,7 @@ body {
     overflow-wrap: anywhere;
 }
 
+/* 19. Cabeçalho: campo de busca */
 .header-search {
     display: flex;
     align-items: center;
@@ -1277,19 +1280,349 @@ body {
     outline-offset: 3px;
 }
 
+/* 20. Detalhes da corrida */
+.race-details-page {
+    display: grid;
+    gap: 28px;
+    padding-block: 8px 16px;
+}
+
+.race-details-page > *,
+.race-details-page figure,
+.race-details-page figure > *,
+.race-track-stats > div,
+.race-info-panel {
+    min-width: 0;
+}
+
+.race-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    font-size: 14px;
+    color: #afb4be;
+}
+
+.race-breadcrumb a,
+.race-page-actions a {
+    color: #d2d5dd;
+    text-decoration: none;
+}
+
+.race-breadcrumb a:hover,
+.race-page-actions a:hover {
+    color: #ff1e2d;
+}
+
+.race-details-page a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 5px;
+    border-radius: 3px;
+}
+
+.race-page-heading {
+    border-left: 4px solid #ed0b1b;
+    padding-left: 20px;
+}
+
+.race-eyebrow {
+    margin: 0 0 8px;
+    color: #ff4652;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.race-eyebrow span,
+.race-circuit-map p span {
+    margin-inline: 8px;
+    color: #707985;
+}
+
+.race-page-heading h1 {
+    margin: 0;
+    font-family: "Teko", sans-serif;
+    font-size: clamp(42px, 4.5vw, 72px);
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.race-location {
+    margin: 8px 0 0;
+    color: #afb4be;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.race-section-title {
+    margin: 0;
+    font-family: "Teko", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.race-circuit > .race-section-title {
+    margin-bottom: 14px;
+}
+
+.race-circuit-gallery {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    border: 1px solid #24272d;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #080d10;
+}
+
+.race-circuit-gallery figure {
+    margin: 0;
+}
+
+.race-circuit-photo {
+    position: relative;
+    min-height: 320px;
+    background-color: #080d10;
+}
+
+.race-circuit-photo > img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.race-circuit-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 35%, rgba(0, 0, 0, 0.9));
+    pointer-events: none;
+}
+
+.race-circuit-photo figcaption {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    min-height: 320px;
+    height: 100%;
+    padding: 28px;
+}
+
+.race-circuit-photo .race-eyebrow {
+    color: #ffffff;
+}
+
+.race-circuit-photo strong {
+    font-family: "Teko", sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.race-circuit-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 28px;
+    border-left: 1px solid #24272d;
+    background: radial-gradient(ellipse at center, #172126, #080d10 75%);
+}
+
+.race-circuit-map figcaption {
+    align-self: start;
+    color: #afb4be;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.race-circuit-map img {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+}
+
+.race-circuit-map p {
+    margin: 0;
+    color: #afb4be;
+    font-size: 14px;
+    text-align: center;
+}
+
+.race-track-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin: 16px 0 0;
+}
+
+.race-track-stats > div {
+    padding: 20px 24px;
+    border: 1px solid #24272d;
+    border-radius: 8px;
+    background-color: #080d10;
+}
+
+.race-track-stats dt {
+    color: #afb4be;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.race-track-stats dd {
+    margin: 10px 0 0;
+    font-family: "Teko", sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.race-track-stats dd span {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #afb4be;
+}
+
+.race-weekend-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
+    gap: 20px;
+}
+
+.race-info-panel {
+    padding: 24px;
+    border: 1px solid #24272d;
+    border-radius: 10px;
+    background-color: #080d10;
+}
+
+.race-panel-description {
+    margin: 12px 0 20px;
+    color: #afb4be;
+    line-height: 1.5;
+}
+
+.race-session-list {
+    margin: 0;
+}
+
+.race-session-list > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 24px;
+    padding-block: 14px;
+    border-top: 1px solid #24272d;
+}
+
+.race-session-list dt {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.race-session-list dd {
+    margin: 0;
+    color: #afb4be;
+    font-size: 14px;
+}
+
+.race-results-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.race-results-empty {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 24px;
+    text-align: center;
+}
+
+.race-results-empty svg {
+    flex-shrink: 0;
+    color: #ff4652;
+}
+
+.race-results-empty h3 {
+    margin: 16px 0 8px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.race-results-empty p {
+    margin: 0;
+    max-width: 36ch;
+    color: #afb4be;
+    line-height: 1.5;
+}
+
+.race-page-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.race-page-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 44px;
+    padding: 10px 0;
+}
+
+.race-page-actions .race-back-link {
+    padding-inline: 18px;
+    border: 1px solid #ed0b1b;
+    border-radius: 6px;
+    background-color: #ed0b1b;
+    color: white;
+}
+
+.race-page-actions .race-back-link:hover {
+    border-color: #c90917;
+    background-color: #c90917;
+}
+
+/* Responsividade: todas as media queries abaixo */
+/* 21. Responsividade: dashboard até 1400 px */
 @media (max-width: 1400px) {
-      .dashboard {
+    .dashboard {
         grid-template-columns: minmax(0,1fr);
 
         grid-template-areas:
-         "driver"
-         "race"
-         "performance"
-         "standings"
-         "recent-races";
+            "driver"
+            "race"
+            "performance"
+            "standings"
+            "recent-races";
 
-         margin-block: 12px;
-         gap: 16px;
+        margin-block: 12px;
+        gap: 16px;
     }
 
     .quote {
@@ -1297,11 +1630,12 @@ body {
     }
 }
 
+/* 22. Ajustes do piloto a partir de 1101 px */
 @media (min-width: 1101px) {
     .driver-info {
         font-size: 16px;
     }
-    
+
     .driver-phrase {
         font-size: 16px;
         line-height: 1.5;
@@ -1318,8 +1652,8 @@ body {
     }
 }
 
+/* 23. Responsividade compartilhada até 1100 px */
 @media (max-width: 1100px) {
-
     .dashboard,
     .calendar-page,
     .page-content,
@@ -1330,12 +1664,12 @@ body {
     .driver {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
-        grid-template-areas: 
+        grid-template-areas:
             "photo summary"
             "stats stats"
             "team team";
     }
-    
+
     .driver > .team-info {
         max-width: none;
         grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
@@ -1359,33 +1693,31 @@ body {
     .header {
         display: grid;
         grid-template-columns: 44px minmax(0, 1fr) 44px;
-        
+
         gap: 8px;
         padding: 8px 20px;
     }
 
     .menu-toggle {
-    grid-column: 1;
-    grid-row: 1;
-    display: grid;
-    place-items: center;
-}
+        grid-column: 1;
+        grid-row: 1;
+        display: grid;
+        place-items: center;
+    }
 
     .header > .brand-link,
     .header > .logo {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: center;
-    min-width: 0;
-}
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: center;
+        min-width: 0;
+    }
 
     .header .logo {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-    
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
 
     .menu {
         display: none;
@@ -1412,14 +1744,15 @@ body {
     }
 }
 
+/* 24. Responsividade: dashboard e rodapé até 600 px */
 @media (max-width: 600px) {
-     .driver-stats {
+    .driver-stats {
         position: relative;
         z-index: 2;
         margin-top: -24px;
         padding: 0 12px;
     }
-    
+
     .next-race {
         height: auto;
     }
@@ -1469,6 +1802,111 @@ body {
     .footer-tagline {
         flex-basis: 100%;
         margin-left: 0;
+    }
 }
-    
+
+/* 25. Responsividade: calendário até 1000 px */
+@media (max-width: 1000px) {
+    .calendar-next-race {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "preview" "circuit";
+    }
+
+    .calendar-next-race-content {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .calendar-race-heading {
+        display: grid;
+        grid-template-columns: 76px minmax(0, 1fr);
+    }
+
+    .calendar-race-info {
+        grid-column: 1 / -1;
+    }
+
+    .calendar-race-info h3 {
+        font-size: 32px;
+    }
+
+    .calendar-featured-track {
+        max-width: 220px;
+        justify-self: center;
+    }
+
+    .calendar-circuit-info {
+        border-left: none;
+        border-top: 1px solid #24272d;
+    }
+}
+
+/* 26. Responsividade: detalhes até 900 px */
+@media (max-width: 900px) {
+    .race-circuit-gallery,
+    .race-weekend-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .race-circuit-map {
+        border-left: none;
+        border-top: 1px solid #24272d;
+    }
+
+    .race-track-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* 27. Responsividade: detalhes até 600 px */
+@media (max-width: 600px) {
+    .race-details-page {
+        gap: 24px;
+    }
+
+    .race-page-heading {
+        padding-left: 14px;
+    }
+
+    .race-location {
+        font-size: 16px;
+    }
+
+    .race-circuit-photo,
+    .race-circuit-photo figcaption {
+        min-height: 240px;
+    }
+
+    .race-circuit-photo figcaption,
+    .race-circuit-map,
+    .race-info-panel {
+        padding: 20px;
+    }
+
+    .race-circuit-photo strong {
+        font-size: 30px;
+    }
+
+    .race-track-stats {
+        gap: 12px;
+    }
+
+    .race-track-stats > div {
+        padding: 16px;
+    }
+
+    .race-track-stats dd {
+        font-size: 34px;
+    }
+}
+
+/* 28. Responsividade: detalhes até 400 px */
+@media (max-width: 400px) {
+    .race-track-stats {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .race-page-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }

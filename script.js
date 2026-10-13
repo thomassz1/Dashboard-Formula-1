@@ -91,3 +91,4 @@ if (canvas && typeof Chart === "function") {
     }
   });
 }
+
