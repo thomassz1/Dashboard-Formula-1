@@ -28,6 +28,7 @@ body {
 /* 04. Cabeçalho e navegação */
 .header {
     display: flex;
+    gap: 24px;
 
     align-items: center;
     min-height: 64px;
@@ -53,8 +54,8 @@ body {
 
 .menu {
     display: flex;
-    gap: 32px;
-    margin-left: 60px;
+    gap: clamp(12px, 1.5vw, 24px);
+    margin-left: 0;
     align-items: center;
 }
 
@@ -1608,7 +1609,8 @@ body {
     background-color: #c90917;
 }
 
-/* Responsividade: todas as media queries abaixo */
+/* Responsividade: media queries em ordem decrescente de largura. */
+/* max-width: até a largura indicada; min-width: a partir dela. */
 /* 21. Responsividade: dashboard até 1400 px */
 @media (max-width: 1400px) {
     .dashboard {
@@ -1630,7 +1632,7 @@ body {
     }
 }
 
-/* 22. Ajustes do piloto a partir de 1101 px */
+/* 22. Ajustes do piloto a partir de 1101 px (largura mínima) */
 @media (min-width: 1101px) {
     .driver-info {
         font-size: 16px;
@@ -1744,7 +1746,59 @@ body {
     }
 }
 
-/* 24. Responsividade: dashboard e rodapé até 600 px */
+/* 24. Responsividade: calendário até 1000 px */
+@media (max-width: 1000px) {
+    .calendar-next-race {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "preview" "circuit";
+    }
+
+    .calendar-next-race-content {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .calendar-race-heading {
+        display: grid;
+        grid-template-columns: 76px minmax(0, 1fr);
+    }
+
+    .calendar-race-info {
+        grid-column: 1 / -1;
+    }
+
+    .calendar-race-info h3 {
+        font-size: 32px;
+    }
+
+    .calendar-featured-track {
+        max-width: 220px;
+        justify-self: center;
+    }
+
+    .calendar-circuit-info {
+        border-left: none;
+        border-top: 1px solid #24272d;
+    }
+}
+
+/* 25. Responsividade: detalhes até 900 px */
+@media (max-width: 900px) {
+    .race-circuit-gallery,
+    .race-weekend-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .race-circuit-map {
+        border-left: none;
+        border-top: 1px solid #24272d;
+    }
+
+    .race-track-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* 26. Responsividade: dashboard, rodapé e detalhes até 600 px */
 @media (max-width: 600px) {
     .driver-stats {
         position: relative;
@@ -1803,62 +1857,7 @@ body {
         flex-basis: 100%;
         margin-left: 0;
     }
-}
 
-/* 25. Responsividade: calendário até 1000 px */
-@media (max-width: 1000px) {
-    .calendar-next-race {
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-areas: "preview" "circuit";
-    }
-
-    .calendar-next-race-content {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .calendar-race-heading {
-        display: grid;
-        grid-template-columns: 76px minmax(0, 1fr);
-    }
-
-    .calendar-race-info {
-        grid-column: 1 / -1;
-    }
-
-    .calendar-race-info h3 {
-        font-size: 32px;
-    }
-
-    .calendar-featured-track {
-        max-width: 220px;
-        justify-self: center;
-    }
-
-    .calendar-circuit-info {
-        border-left: none;
-        border-top: 1px solid #24272d;
-    }
-}
-
-/* 26. Responsividade: detalhes até 900 px */
-@media (max-width: 900px) {
-    .race-circuit-gallery,
-    .race-weekend-grid {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .race-circuit-map {
-        border-left: none;
-        border-top: 1px solid #24272d;
-    }
-
-    .race-track-stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* 27. Responsividade: detalhes até 600 px */
-@media (max-width: 600px) {
     .race-details-page {
         gap: 24px;
     }
@@ -1899,7 +1898,7 @@ body {
     }
 }
 
-/* 28. Responsividade: detalhes até 400 px */
+/* 27. Responsividade: detalhes até 400 px */
 @media (max-width: 400px) {
     .race-track-stats {
         grid-template-columns: minmax(0, 1fr);
