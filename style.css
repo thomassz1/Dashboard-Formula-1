@@ -883,7 +883,7 @@ body {
 .calendar-next-race-content {
     grid-area: preview;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 220px;
+    grid-template-columns: minmax(0, 1fr);
     align-items: center;
     gap: 24px;
 
@@ -914,9 +914,26 @@ body {
 .calendar-race-summary {
     position: relative;
     z-index: 1;
+    min-width: 0;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+
+    grid-template-areas:
+        "heading   track"
+        "countdown track"
+        "action    track";
+
+    column-gap: 24px;
+}
+
+.calendar-race-summary > .race-details-button {
+    grid-area: action;
 }
 
 .calendar-race-heading {
+    grid-area: heading;
+    
     display: flex;
     align-items: center;
     gap: 20px;
@@ -975,6 +992,8 @@ body {
 }
 
 .calendar-countdown {
+    grid-area: countdown;
+
     margin-top: 24px;
 }
 
@@ -1212,6 +1231,9 @@ body {
 
 /* 18. Calendário: traçado e identificação do circuito */
 .calendar-featured-track {
+    grid-area: track;
+    align-self: center;
+    
     position: relative;
     z-index: 1;
 
@@ -1755,15 +1777,54 @@ body {
 
 /* 24. Responsividade: calendário até 1000 px */
 @media (max-width: 1000px) {
+    .calendar-page {
+        grid-template-areas: 
+        "controls"
+        "race"
+        "events";
+    }
+
+    .calendar-controls {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .season-control select {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .calendar-filters {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .calendar-filters button {
+        min-width: 0;
+        padding: 8px;
+    }
+
     .calendar-next-race {
         grid-template-columns: minmax(0, 1fr);
         grid-template-areas: "preview" "circuit";
     }
 
-    .calendar-next-race-content {
-        grid-template-columns: minmax(0, 1fr);
-    }
+   .calendar-race-summary {
+    grid-template-columns: minmax(0, 1fr);
 
+    grid-template-areas:
+        "heading"
+        "track"
+        "countdown"
+        "action";
+
+    row-gap: 16px;
+}
+
+.calendar-race-summary > .calendar-countdown,
+.calendar-race-summary > .race-details-button {
+    margin-top: 0;
+}
     .calendar-race-heading {
         display: grid;
         grid-template-columns: 76px minmax(0, 1fr);
@@ -1779,12 +1840,55 @@ body {
 
     .calendar-featured-track {
         max-width: 220px;
-        justify-self: center;
+        justify-self: end;
     }
 
     .calendar-circuit-info {
         border-left: none;
         border-top: 1px solid #24272d;
+    }
+
+    .calendar-event {
+        grid-template-columns: 32px 48px 44px minmax(0, 1fr) 72px 88px;
+
+        grid-template-areas: 
+            "round date flag info track status"
+            "round date flag stats track status";
+
+        gap: 4px 10px;
+        padding: 12px;
+    }
+
+    .calendar-event-round {
+        grid-area: round;
+    }
+
+    .calendar-event-date {
+        grid-area: date;
+    }
+
+    .calendar-event-flag {
+        grid-area: flag;
+        width: 44px;
+    }
+
+    .calendar-event-info {
+        grid-area: info;
+    }
+
+    .calendar-event-track {
+        grid-area: track;
+    }
+
+    .calendar-event-stats {
+        grid-area: stats;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px 12px;
+    }
+
+    .calendar-event-status {
+        grid-area: status;
     }
 }
 
@@ -1807,6 +1911,25 @@ body {
 
 /* 26. Responsividade: dashboard, rodapé e detalhes até 600 px */
 @media (max-width: 600px) {
+    .calendar-event {
+        grid-template-columns: 28px 44px minmax(0, 1fr) 80px;
+
+        grid-template-areas:
+            "round date info status"
+            "round flag stats track";
+
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .calendar-event-info h3 {
+        font-size: 20px;
+    }
+
+    .calendar-event-status {
+        padding: 6px 4px;
+    }
+    
     .driver-stats {
         position: relative;
         z-index: 2;
@@ -1907,6 +2030,14 @@ body {
 
 /* 27. Responsividade: detalhes até 400 px */
 @media (max-width: 400px) {
+    .calendar-event {
+        grid-template-areas: 
+        "round date info info"
+        "round flag stats stats"
+        "round . track status";
+    }
+
+
     .race-track-stats {
         grid-template-columns: minmax(0, 1fr);
     }
