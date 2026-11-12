@@ -1328,7 +1328,15 @@ body {
 /* Piloto em destaque: estrutura e foto */
 .pilot-feature {
     display: grid;
-    grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
+    grid-template-columns:
+        minmax(240px, 340px)
+        minmax(0, 1fr)
+        minmax(260px, 320px);
+
+    grid-template-areas:
+        "photo info  details"
+        "photo stats details";
+    
     gap: 24px;
 
     overflow: hidden;
@@ -1338,6 +1346,8 @@ body {
 }
 
 .pilot-feature-photo {
+    grid-area: photo;   
+
     position: relative;
     min-height: 440px;
     background: linear-gradient(135deg, #440913, #0a0e13);
@@ -1369,6 +1379,8 @@ body {
 }
 
 .pilot-feature-info {
+    grid-area: info;
+
     min-width: 0;
     padding: 28px 28px 28px 0;
 }
@@ -1424,6 +1436,92 @@ body {
     margin: 8px 0 0;
     font-size: 18px;
     font-weight: 600;
+}
+
+.pilot-feature-stats {
+    grid-area: stats;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+
+    max-width: 520px;
+    margin: 0;
+    padding: 0 28px 24px 0;
+}
+
+.pilot-feature-stats > div {
+    padding: 12px 6px;
+    border: 1px solid #263139;
+    border-radius: 6px;
+    background: #050a0e;
+    text-align: center;
+}
+
+.pilot-feature-stats dt {
+    display: grid;
+    justify-items: center;
+    gap: 6px;
+
+    color: #afb4be;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.pilot-feature-stats dt img {
+    width: 24px;
+    height: 24px;
+}
+
+.pilot-feature-stats dd {
+    margin: 6px 0 0;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.pilot-feature-details {
+    grid-area: details;
+    min-width: 0;
+    margin: 28px 0;
+    padding: 0 24px;
+    border-left: 1px solid #263139;
+}
+
+.pilot-feature-team-logo {
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    height: 90px;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto 24px;
+}
+
+.pilot-profile {
+    display: grid;
+    gap: 16px;
+    margin: 0;
+    text-align: center;
+}
+
+.pilot-profile > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+}
+
+.pilot-profile dt {
+    color: #afb4be;
+    font-size: 14px;
+}
+
+.pilot-profile dd {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
 }
 
 /* 20. Detalhes da corrida */
@@ -1896,6 +1994,22 @@ body {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
     }
+
+    .pilot-feature {
+        grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
+
+        grid-template-areas:
+            "photo   info"
+            "photo   stats"
+            "details details";
+    }
+
+    .pilot-feature-details {
+        margin: 0 24px 24px;
+        padding: 24px 0 0;
+        border-left: none;
+        border-top: 1px solid #263139;
+}
 }
 
 /* 24. Responsividade: calendário até 1000 px */
@@ -2034,7 +2148,13 @@ body {
 
 @media (max-width: 700px) {
     .pilot-feature {
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+       grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+
+       grid-template-areas:
+        "photo   info"
+        "stats   stats"
+        "details details";
+
         gap: 8px;
     }
 
@@ -2069,7 +2189,24 @@ body {
         font-size: 15px;
     }
     
-    
+    .pilot-feature-stats {
+        max-width: none;
+        padding: 0 12px 12px;
+    }
+
+    .pilot-feature-stats dt {
+        font-size: 11px;
+    }
+
+    .pilot-feature-stats dd {
+        font-size: 22px;
+    }
+
+    .pilot-feature-details {
+        margin: 0 12px 12px;
+        padding-top: 20px;
+}
+
 }
 
 /* 26. Responsividade: dashboard, rodapé e detalhes até 600 px */
