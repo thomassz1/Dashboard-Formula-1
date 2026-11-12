@@ -1524,6 +1524,138 @@ body {
     overflow-wrap: anywhere;
 }
 
+.pilots-catalog {
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid #263139;
+    border-radius: 10px;
+    background: #050a0e;
+}
+
+.pilots-list-heading {
+    margin-bottom: 16px;
+}
+
+.pilots-list-heading h2 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.1;
+}
+
+.pilots-list-heading p {
+    margin: 6px 0 0;
+    color: #afb4be;
+    font-size: 14px;
+}
+
+/* Catálogo de pilotos: grid e cards */
+.pilots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.pilot-card {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    min-width: 0;
+    min-height: 190px;
+    max-width: 320px;
+    overflow: hidden;
+
+    border: 1px solid #263139;
+    border-radius: 8px;
+    background: #090f13;
+}
+
+.pilot-card-portrait {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.pilot-card-portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 12%;
+}
+
+/* Escurece a parte inferior da foto para destacar os textos */
+.pilot-card-portrait::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 35%,
+      rgba(5, 10, 14, 0.7) 65%,
+      #050a0e 100%
+    );
+}
+
+.pilot-card-position {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+
+    z-index: 1;
+
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+
+    border-radius: 4px;
+    background: #050a0e;
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* Card do piloto: informações e pontuação */
+.pilot-card-info {
+    padding: 8px 12px 6px;
+}
+
+.pilot-card-info h3 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.1;
+}
+
+.pilot-card-info p {
+     margin: 0;
+    font-size: 18px;
+    line-height: 1.1;
+}
+
+.pilot-card-points {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+
+    margin: 0 12px;
+    padding: 6px 0 8px;
+    border-top: 1px solid #263139;
+
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.pilot-card-points span {
+    color: #ff1e2d;
+    font-size: 13px;
+}
+
 /* 20. Detalhes da corrida */
 .race-details-page {
     display: grid;
@@ -2208,6 +2340,8 @@ body {
 }
 
 }
+
+
 
 /* 26. Responsividade: dashboard, rodapé e detalhes até 600 px */
 @media (max-width: 600px) {
